@@ -10,6 +10,7 @@ import astropy.units as u
 
 mu0 = np.pi * 4.0e-7 * (u.newton / (u.amp**2))
 
+
 class Plasma():
     """Core class for describing and calculating plasma parameters.
 
@@ -36,7 +37,7 @@ class Plasma():
     magnetic_field : `astropy.units.Quantity`
         (3, x, y, z) array of the magnetic field vector at every point in the domain.
 
-        
+
     Parameters
     ----------
     domain_x : `astropy.units.Quantity`
@@ -53,8 +54,8 @@ class Plasma():
         self.y = domain_y
         self.z = domain_z
 
-        x, y, z = self.x.si.value, self.y.si.value, self.z.si.value
-        self.grid = np.meshgrid(x, y, z, indexing='ij') * u.m
+        self.grid = np.array(np.meshgrid(self.x, self.y, self.z,
+                                         indexing='ij'))
         self.domain_shape = (len(self.x), len(self.y), len(self.z))
 
         # Initiate core plasma variables
@@ -62,6 +63,7 @@ class Plasma():
         self.momentum = np.zeros((3, *self.domain_shape)) * u.kg / (u.m**2 * u.s)
         self.pressure = np.zeros(self.domain_shape) * u.Pa
         self.magnetic_field = np.zeros((3, *self.domain_shape)) * u.T
+        self.electric_field = np.zeros((3, *self.domain_shape)) * u.V / u.m
 
     @property
     def velocity(self):
@@ -71,6 +73,11 @@ class Plasma():
     def magnetic_field_strength(self):
         B = self.magnetic_field
         return np.sqrt(np.sum(B * B, axis=0))
+
+    @property
+    def electric_field_strength(self):
+        E = self.electric_field
+        return np.sqrt(np.sum(E * E, axis=0))
 
     @property
     def alfven_speed(self):
