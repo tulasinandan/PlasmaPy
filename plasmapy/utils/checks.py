@@ -7,7 +7,7 @@ from ..constants import c
 
 
 def check_quantity(validations):
-    """Raises exceptions if `argname` in decorated function is not an
+    r"""Raises exceptions if `argname` in decorated function is not an
     astropy Quantity with correct units and valid numerical values.
 
     Parameters
@@ -37,15 +37,21 @@ def check_quantity(validations):
     --------
     >>> from astropy import units as u
     >>> @check_quantity({
-    >>>      "x": {"units": u.m},
-    >>>      "y": {"units": u.s,
-    >>>            "can_be_negative": False,
-    >>>            "can_be_complex": True,
-    >>>            "can_be_inf": False}
-    >>> })
-    >>> def func(x: u.m, y: u.s=1*u.s):
-    >>>     return x
-    >>> func(1*u.m, 2*u.s)
+    ... "x": {"units": u.m},
+    ... "y": {"units": u.s,
+    ...       "can_be_negative": False,
+    ...       "can_be_complex": True,
+    ...       "can_be_inf": False}
+    ... })
+    ... def func(x: u.m, y: u.s=1*u.s):
+    ...     return x
+    ...
+    >>> func(1*u.m)
+    <Quantity 1.0 m>
+    >>> func(1*u.m, 2*u.m)
+    Traceback (most recent call last):
+      ...
+    astropy.units.core.UnitConversionError: The argument y to func should be a Quantity with the following units: s
 
     """
     def decorator(f):
@@ -97,7 +103,7 @@ def check_quantity(validations):
 
 
 def check_relativistic(func=None, betafrac=0.1):
-    """Raises an error when the output of the decorated
+    r"""Raises an error when the output of the decorated
     function is greater than `betafrac` times the speed of light
 
     Parameters
@@ -133,13 +139,13 @@ def check_relativistic(func=None, betafrac=0.1):
     --------
     >>> from astropy import units as u
     >>> @check_relativistic
-    >>> def speed():
-    >>>     return 1*u.m/u.s
+    ... def speed():
+    ...     return 1*u.m/u.s
 
     Passing in a custom `betafrac`
     >>> @check_relativistic(betafrac=0.01)
-    >>> def speed():
-    >>>     return 1*u.m/u.s
+    ... def speed():
+    ...     return 1*u.m/u.s
 
     """
     def decorator(f):
@@ -206,7 +212,7 @@ def _check_quantity(arg, argname, funcname, units, can_be_negative=True,
     Examples
     --------
     >>> from astropy import units as u
-    >>> check_quantity(4*u.T, 'B', 'f', u.T)
+    >>> _check_quantity(4*u.T, 'B', 'f', u.T)
 
     """
 

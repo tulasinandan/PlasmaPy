@@ -18,9 +18,9 @@ def Coulomb_logarithm(T, n_e, particles, V=None):
     ----------
 
     T : Quantity
-    Temperature in units of temperature or energy per particle,
-    which is assumed to be equal for both the test particle and
-    the target particle
+        Temperature in units of temperature or energy per particle,
+        which is assumed to be equal for both the test particle and
+        the target particle
 
     n_e : Quantity
         The electron density in units convertible to per cubic meter.
@@ -61,7 +61,7 @@ def Coulomb_logarithm(T, n_e, particles, V=None):
     The Coulomb logarithm is given by
 
     .. math::
-    \ln{\Lambda} \equiv \ln\left( \frac{b_{max}}{b_{min}} \right)
+        \ln{\Lambda} \equiv \ln\left( \frac{b_{max}}{b_{min}} \right)
 
     where :math:`b_{min}` and :math:`b_{max}` are the inner and outer
     impact parameters for Coulomb collisions _[1].
@@ -91,10 +91,13 @@ def Coulomb_logarithm(T, n_e, particles, V=None):
     Examples
     --------
     >>> from astropy import units as u
-    >>> Coulomb_logarithm(T=1e6*u.K, n_e=1e19*u.m**-3, ('e', 'p'))
+    >>> n = 1e19*units.m**-3
+    >>> T = 1e6*units.K
+    >>> particles = ('e', 'p')
+    >>> Coulomb_logarithm(T, n, particles)
     14.748259780491056
-    >>> Coulomb_logarithm(1e6*u.K, 1e19*u.m**-3, ('e', 'p'),
-                          V=1e6*u.m/u.s)
+    >>> Coulomb_logarithm(T, n, particles, 1e6*u.m/u.s)
+    11.363478214139432
 
     References
     ----------

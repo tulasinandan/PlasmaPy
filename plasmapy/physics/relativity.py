@@ -40,7 +40,7 @@ def Lorentz_factor(V):
     The Lorentz factor is a dimensionless number given by
 
     .. math::
-    \gamma = \frac{1}{\sqrt{1-\frac{V^2}{c^2}}}
+        \gamma = \frac{1}{\sqrt{1-\frac{V^2}{c^2}}}
 
     The Lorentz factor is approximately one for sub-relativistic
     velocities, and goes to infinity as the velocity approaches the
@@ -53,7 +53,7 @@ def Lorentz_factor(V):
     >>> Lorentz_factor(velocity)
     1.130885603948959
     >>> Lorentz_factor(299792458*u.m/u.s)
-
+    inf
     """
 
     _check_quantity(V, 'V', 'Lorentz_factor', units.m/units.s)

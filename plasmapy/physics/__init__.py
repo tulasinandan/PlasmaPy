@@ -3,26 +3,29 @@
 
 from .parameters import (Alfven_speed,
                          ion_sound_speed,
-                         electron_thermal_speed,
-                         ion_thermal_speed,
-                         electron_gyrofrequency,
-                         ion_gyrofrequency,
-                         electron_gyroradius,
-                         ion_gyroradius,
-                         electron_plasma_frequency,
-                         ion_plasma_frequency,
+                         thermal_speed,
+                         gyrofrequency,
+                         gyroradius,
+                         plasma_frequency,
                          Debye_length,
                          Debye_number,
-                         ion_inertial_length,
-                         electron_inertial_length,
+                         inertial_length,
                          magnetic_pressure,
                          magnetic_energy_density,
                          upper_hybrid_frequency,
                          lower_hybrid_frequency,
                          )
 
-from .quantum import deBroglie_wavelength
+from .quantum import (deBroglie_wavelength,
+                      Fermi_energy,
+                      Thomas_Fermi_length,
+                      )
 
 from .relativity import Lorentz_factor
 
 from .transport import Coulomb_logarithm
+
+from .distribution import (Maxwellian_1D,
+                           Maxwellian_speed_1D,
+                           Maxwellian_velocity_3D,
+                           Maxwellian_speed_3D)

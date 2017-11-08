@@ -1,5 +1,5 @@
 # PlasmaPy
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](./LICENSE.md)
 [![Build Status](https://travis-ci.org/PlasmaPy/PlasmaPy.svg?branch=master)](https://travis-ci.org/PlasmaPy/PlasmaPy)
 [![Coverage Status](https://coveralls.io/repos/github/PlasmaPy/PlasmaPy/badge.svg?branch=master)](https://coveralls.io/github/PlasmaPy/PlasmaPy?branch=master)
 
@@ -11,6 +11,8 @@ and researchers globally, running within and leveraging the open source
 scientific Python ecosystem. The goals of this project are more thoroughly described in our
 [vision statement](vision_statement.md)
 and [an earlier conference poster](http://doi.org/10.5281/zenodo.163752).
+We are in the process of writing [online
+documentation](http://plasmapy.readthedocs.io/en/latest/).
 
 We created a guide on
 [contributing to PlasmaPy](CONTRIBUTING.md) and have a [code of conduct](CODE_OF_CONDUCT.md).
@@ -36,5 +38,6 @@ PlasmaPy requires Python 3.6 and is
 
 ## License
 
-PlasmaPy is licensed under a 3-clause BSD style license - see
-``LICENSE.md`` file in the top-level directory.
+PlasmaPy is licensed under a 3-clause BSD license with added protections
+against software patents - see the [``LICENSE.md``](LICENSE.md) file in
+the top-level directory.
