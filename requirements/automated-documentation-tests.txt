@@ -1,0 +1,8 @@
+-r requirements.txt
+
+numpydoc
+pillow
+sphinx
+sphinx-automodapi
+sphinx-gallery
+sphinx_rtd_theme

@@ -12,8 +12,7 @@ Release Tasks
 The following is a partial list of tasks to be performed for each
 release.  This list is currently under development.  Developers should
 expand the instructions while performing each release, and may use
-`Astropy's release
-procedures`<https://github.com/astropy/astropy/blob/master/docs/development/releasing.rst>
+`Astropy's release procedures <https://github.com/astropy/astropy/blob/master/docs/development/releasing.rst>`
 for guidance.
 
 * Update ``CHANGE_LOG.rst``
@@ -28,6 +27,8 @@ for guidance.
 
 * Create a new branch for the release that is separate from the master
   branch
+  
+* Merge (via fast-forward merge with `git merge --ff-only`) changes from `master` into `stable`
 
 * Make sure all tests pass
 
@@ -38,4 +39,3 @@ for guidance.
 * Mint a release on Zenodo and get a digital object identifier (DOI)
 
 * Alert plasma physics communities about the release
-

@@ -1,52 +1,40 @@
-.. py:module:: atomic
+.. py:module:: plasmapy.atomic
 
 .. _plasmapy-atomic:
 
-******
-Atomic
-******
+**************************************
+The Atomic Package (`plasmapy.atomic`)
+**************************************
 
-.. automodule:: plasmapy.atomic
+.. currentmodule:: plasmapy.atomic
 
-Test: :func:`~plasmapy.atomic.atomic_symbol`
+Introduction
+============
 
-Functions
-=========
+`plasmapy.atomic` provides access to information about atoms, ions,
+isotopes, and other particles.
 
-The functions contained within the atomic subpackage are:
+Submodules
+==========
 
-* .. autofunction:: atomic_symbol
+.. toctree::
+   :maxdepth: 2
 
-* .. autofunction:: isotope_symbol
+   particle_class
+   functional
+   nuclear
+   decorators
 
-* .. autofunction:: atomic_number
+See Also
+========
 
-* .. autofunction:: is_isotope_stable
+- The `mendeleev <https://pypi.python.org/pypi/mendeleev>`_ Python
+  package provides access to properties of elements, isotopes, and ions
+  in the periodic table of elements.
 
-* .. autofunction:: half_life
+Reference/API
+=============
 
-* .. autofunction:: mass_number
-
-* .. autofunction:: element_name
-
-* .. autofunction:: standard_atomic_weight
-
-* .. autofunction:: isotope_mass
-
-* .. autofunction:: ion_mass
-
-* .. autofunction:: known_isotopes
-
-* .. autofunction:: common_isotopes
-
-* .. autofunction:: stable_isotopes
-
-* .. autofunction:: isotopic_abundance
-
-* .. autofunction:: charge_state
-
-* .. autofunction:: electric_charge
-
-
-
-
+.. automodapi:: plasmapy.atomic
+   :no-heading:
+   :no-main-docstr:
